@@ -17,3 +17,14 @@ class Departamento:
         for e in self.empleados:
             s += e.get_salario()
         return s
+
+    # EPD 2
+
+    def get_nombre_depto(self):
+        return self.nombre_depto
+
+    def get_salario_total_mensual(self):
+        s = 0
+        for e in self.empleados:
+            s += e.get_salario_mensual()
+        return s
