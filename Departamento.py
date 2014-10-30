@@ -1,5 +1,3 @@
-from mockito import *
-from Empleado import Empleado
 __author__ = 'Greg'
 
 
