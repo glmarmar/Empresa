@@ -1,7 +1,10 @@
 from unittest import TestCase
+
 from mockito import *
+
 from Empleado import *
 from Departamento import *
+
 
 __author__ = 'Greg'
 
