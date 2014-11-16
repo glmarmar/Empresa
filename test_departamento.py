@@ -10,7 +10,14 @@ __author__ = 'Greg'
 
 
 class TestDepartamento(TestCase):
+    """
+        Esta clase es un caso de pruebas unitarias sobre metodos de la clase Departamento.
+    """
+
     def test_get_salario_total(self):
+        """
+            Testea que el metodo get_salario_total funciona como debe.
+        """
         dep = Departamento("Desarrollo de pruebas", 1)
         i = 1
         while i <= 3:
@@ -21,6 +28,9 @@ class TestDepartamento(TestCase):
         self.assertEqual(dep.get_salario_total(), 6000)
 
     def test_get_salario_total_mensual(self):
+        """
+            Testea que el metodo get_salario_total_mensual funciona como debe.
+        """
         dep = Departamento("Desarrollo de pruebas", 1)
         i = 1
         while i <= 3:
