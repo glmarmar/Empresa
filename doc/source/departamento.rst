@@ -4,10 +4,10 @@ Modulo Departamento
 
 *Este modulo contiene la implementación de la clase Departamento*
 
-.. automodule:: Departamento
+.. automodule:: src.Departamento
     :members:
     :special-members:
 
-.. automodule:: test_departamento
+.. automodule:: tests.test_departamento
     :members:
     :special-members:

@@ -2,8 +2,8 @@ from unittest import TestCase
 
 from mockito import *
 
-from Empleado import *
-from Departamento import *
+from src.Empleado import *
+from src.Departamento import *
 
 
 __author__ = 'Greg'
