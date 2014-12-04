@@ -1,0 +1,13 @@
+language: python
+python:
+  - "2.7"
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install:
+  - pip install pytest pytest-cov
+  - pip install mockito
+  - pip install coveralls
+# command to run tests, e.g. python setup.py test
+script:
+  - py.test --cov . --cov-report term-missing
+after_success:
+  - coveralls
