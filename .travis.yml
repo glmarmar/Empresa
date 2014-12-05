@@ -11,17 +11,18 @@ install:
   - pip install sphinx
 
 script:
+# - sphinx-build -b html ./doc/source ./doc/build
+  - py.test --cov . --cov-report term-missing
+
+after_script:
   - pep8 ./src/ --statistics --count
   - pep8 ./tests/ --statistics --count
-#  - sphinx-build -b html ./doc/source ./doc/build
-  - py.test --cov . --cov-report term-missing
   - radon cc ./src/
   - radon cc ./tests/
   - radon mi ./src/
   - radon mi ./tests/
   - radon raw ./src/
   - radon raw ./tests/
-after_script:
   - coveralls
 notifications:
   email:
