@@ -13,7 +13,7 @@ install:
 script:
   - pep8 ./src/ --statistics
   - pep8 ./tests/ --statistics
-  - sphinx-build -b html ./doc/source ./doc/build
+#  - sphinx-build -b html ./doc/source ./doc/build
   - py.test --cov . --cov-report term-missing
   - radon cc ./src/
   - radon cc ./tests/
