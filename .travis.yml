@@ -6,8 +6,15 @@ install:
   - pip install pytest pytest-cov
   - pip install mockito
   - pip install coveralls
+  - pip install radon
 # command to run tests, e.g. python setup.py test
 script:
   - py.test --cov . --cov-report term-missing
+  - radon cc ./src/
+  - radon cc ./tests/
+  - radon mi ./src/
+  - radon mi ./tests/
+  - radon raw ./src/
+  - radon raw ./tests/
 after_success:
   - coveralls
