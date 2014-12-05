@@ -1,14 +1,19 @@
 language: python
 python:
   - "2.7"
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+
 install:
   - pip install pytest pytest-cov
   - pip install mockito
   - pip install coveralls
   - pip install radon
-# command to run tests, e.g. python setup.py test
+  - pip install pep8
+  - pip install sphinx
+
 script:
+  - pep8 ./src/ --statistics
+  - pep8 ./test/ --statistics
+  - sphinx-build -b html ./doc/source ./doc/build
   - py.test --cov . --cov-report term-missing
   - radon cc ./src/
   - radon cc ./tests/
@@ -16,5 +21,10 @@ script:
   - radon mi ./tests/
   - radon raw ./src/
   - radon raw ./tests/
-after_success:
+after_script:
   - coveralls
+notifications:
+  email:
+    recipients:
+      - glmarmar@alu.upo.es
+      - fake@superrito.com
